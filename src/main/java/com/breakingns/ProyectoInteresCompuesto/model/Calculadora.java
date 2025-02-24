@@ -37,7 +37,7 @@ public class Calculadora {
     public Calculadora() {
     }
 
-    public Calculadora(Long id_calculo, String nombre_calculo, Date fecha_calculo, Double inversion_inicial, Double contribucion_mensual, Integer cantidad_anios, Double tasa_interes_estimada, Double varianza_tasa_interes, Capitalizacion capitalizacion) {
+    public Calculadora(Long id_calculo, String nombre_calculo, Date fecha_calculo, Double inversion_inicial, Double contribucion_mensual, Integer cantidad_anios, Double tasa_interes_estimada, Double varianza_tasa_interes, Usuario usuario, Capitalizacion capitalizacion) {
         this.id_calculo = id_calculo;
         this.nombre_calculo = nombre_calculo;
         this.fecha_calculo = fecha_calculo;
@@ -46,10 +46,8 @@ public class Calculadora {
         this.cantidad_anios = cantidad_anios;
         this.tasa_interes_estimada = tasa_interes_estimada;
         this.varianza_tasa_interes = varianza_tasa_interes;
+        this.usuario = usuario;
         this.capitalizacion = capitalizacion;
     }
-    
-    
-    
-    
+
 }

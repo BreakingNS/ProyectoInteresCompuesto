@@ -35,6 +35,4 @@ public class EntidadInversion {
         this.inversion = inversion;
     }
 
-    
-
 }

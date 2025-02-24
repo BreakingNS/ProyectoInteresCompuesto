@@ -24,4 +24,15 @@ public class NegocioGasto {
     @ManyToOne
     @JoinColumn(name = "id_gasto")
     private Gasto gasto;
+
+    public NegocioGasto() {
+    }
+
+    public NegocioGasto(Long id_negocio_gasto, Date fecha_mes_anio, Negocio negocio, Gasto gasto) {
+        this.id_negocio_gasto = id_negocio_gasto;
+        this.fecha_mes_anio = fecha_mes_anio;
+        this.negocio = negocio;
+        this.gasto = gasto;
+    }
+    
 }

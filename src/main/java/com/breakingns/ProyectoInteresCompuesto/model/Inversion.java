@@ -45,7 +45,5 @@ public class Inversion {
         this.usuario = usuario;
         this.listaEntidadInversion = listaEntidadInversion;
     }
-
-    
     
 }

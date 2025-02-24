@@ -31,7 +31,5 @@ public class Capitalizacion {
         this.nombre_capitalizacion = nombre_capitalizacion;
         this.calculo = calculo;
     }
-    
-    
 
 }

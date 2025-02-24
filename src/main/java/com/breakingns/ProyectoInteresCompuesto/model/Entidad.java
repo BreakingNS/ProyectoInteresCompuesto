@@ -37,6 +37,4 @@ public class Entidad {
         this.tipoInversion = tipoInversion;
     }
 
-     
-
 }

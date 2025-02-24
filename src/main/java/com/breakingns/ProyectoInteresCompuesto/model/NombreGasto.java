@@ -18,5 +18,14 @@ public class NombreGasto {
     
     @OneToMany(mappedBy = "nombre_gasto")
     private List<Gasto> listaGastos;
-    
+
+    public NombreGasto() {
+    }
+
+    public NombreGasto(Long id_nombre_gasto, String nombre_gasto, List<Gasto> listaGastos) {
+        this.id_nombre_gasto = id_nombre_gasto;
+        this.nombre_gasto = nombre_gasto;
+        this.listaGastos = listaGastos;
+    }
+
 }

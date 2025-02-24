@@ -26,6 +26,17 @@ public class Negocio {
     
     @OneToMany(mappedBy = "negocio")
     private List<NegocioGasto> listaNegociosGastos;
+
+    public Negocio() {
+    }
+
+    public Negocio(Long id_negocio, String nombre_negocio, Date fecha_inicio, Usuario usuario, List<NegocioGasto> listaNegociosGastos) {
+        this.id_negocio = id_negocio;
+        this.nombre_negocio = nombre_negocio;
+        this.fecha_inicio = fecha_inicio;
+        this.usuario = usuario;
+        this.listaNegociosGastos = listaNegociosGastos;
+    }
     
 }
 

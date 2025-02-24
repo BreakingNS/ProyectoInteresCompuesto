@@ -27,4 +27,17 @@ public class Gasto {
     @ManyToOne
     @JoinColumn(name = "id_nombre_gasto")
     private NombreGasto nombre_gasto;
+
+    public Gasto() {
+    }
+    
+    public Gasto(Long id_gasto, Double monto_gasto, Date fecha_gasto, String detalle, List<NegocioGasto> listaNegocioGastos, NombreGasto nombre_gasto) {
+        this.id_gasto = id_gasto;
+        this.monto_gasto = monto_gasto;
+        this.fecha_gasto = fecha_gasto;
+        this.detalle = detalle;
+        this.listaNegocioGastos = listaNegocioGastos;
+        this.nombre_gasto = nombre_gasto;
+    }
+    
 }

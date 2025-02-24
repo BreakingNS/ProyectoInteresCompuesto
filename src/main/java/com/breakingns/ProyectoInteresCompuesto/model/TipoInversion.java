@@ -29,7 +29,5 @@ public class TipoInversion {
         this.nombre_tipo_inversion = nombre_tipo_inversion;
         this.listaEntidadInversiones = listaEntidadInversiones;
     }
-
-    
     
 }

@@ -33,8 +33,15 @@ public class Usuario {
 
     public Usuario() {
     }
-    
-    
-    
 
+    public Usuario(Long id_usuario, String usuario, String contrasenia, String correo, List<Inversion> listaInversiones, List<Calculadora> listaCalculos, List<Negocio> listaNegocio) {
+        this.id_usuario = id_usuario;
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+        this.listaInversiones = listaInversiones;
+        this.listaCalculos = listaCalculos;
+        this.listaNegocio = listaNegocio;
+    }
+    
 }
