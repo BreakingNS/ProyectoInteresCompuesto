@@ -28,7 +28,7 @@ public class Inversion {
     private Double total_capital;
     
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
     @OneToMany(mappedBy = "inversion")
     private List<EntidadInversion> listaEntidadInversion;

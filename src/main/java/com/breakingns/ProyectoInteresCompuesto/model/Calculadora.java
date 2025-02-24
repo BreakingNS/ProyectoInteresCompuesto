@@ -27,6 +27,10 @@ public class Calculadora {
     private Double varianza_tasa_interes;
     
     @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+    
+    @ManyToOne
     @JoinColumn(name = "id_capitalizacion")
     private Capitalizacion capitalizacion;
 

@@ -25,18 +25,16 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Inversion> listaInversiones;
     
+    @OneToMany(mappedBy = "usuario")
+    private List<Calculadora> listaCalculos;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Negocio> listaNegocio;
 
     public Usuario() {
     }
-
-    public Usuario(Long id_usuario, String usuario, String contrasenia, String correo, List<Inversion> listaInversiones) {
-        this.id_usuario = id_usuario;
-        this.usuario = usuario;
-        this.contrasenia = contrasenia;
-        this.correo = correo;
-        this.listaInversiones = listaInversiones;
-    }
-
+    
+    
     
 
 }
