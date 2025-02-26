@@ -8,13 +8,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import java.util.Date;
+import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Table(name = "Inversiones")
 @Getter @Setter
 public class Inversion {
     
@@ -23,8 +24,8 @@ public class Inversion {
     private Long id_inversion;
     @Basic
     private String nombre_inversion;
-    private Date fecha_inicio;
-    private String cantidad_entidades;
+    private LocalDateTime fecha_inicio;
+    private Integer cantidad_entidades;
     private Double total_capital;
     
     @ManyToOne
@@ -36,7 +37,7 @@ public class Inversion {
     public Inversion() {
     }
 
-    public Inversion(Long id_inversion, String nombre_inversion, Date fecha_inicio, String cantidad_entidades, Double total_capital, Usuario usuario, List<EntidadInversion> listaEntidadInversion) {
+    public Inversion(Long id_inversion, String nombre_inversion, LocalDateTime fecha_inicio, Integer cantidad_entidades, Double total_capital, Usuario usuario, List<EntidadInversion> listaEntidadInversion) {
         this.id_inversion = id_inversion;
         this.nombre_inversion = nombre_inversion;
         this.fecha_inicio = fecha_inicio;

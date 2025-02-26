@@ -6,11 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import java.util.Date;
+import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Table(name = "calculos")
 @Getter @Setter
 public class Calculadora {
     
@@ -19,7 +21,7 @@ public class Calculadora {
     private Long id_calculo;
     
     private String nombre_calculo;
-    private Date fecha_calculo;
+    private LocalDateTime fecha_calculo;
     private Double inversion_inicial;
     private Double contribucion_mensual;
     private Integer cantidad_anios;
@@ -37,7 +39,7 @@ public class Calculadora {
     public Calculadora() {
     }
 
-    public Calculadora(Long id_calculo, String nombre_calculo, Date fecha_calculo, Double inversion_inicial, Double contribucion_mensual, Integer cantidad_anios, Double tasa_interes_estimada, Double varianza_tasa_interes, Usuario usuario, Capitalizacion capitalizacion) {
+    public Calculadora(Long id_calculo, String nombre_calculo, LocalDateTime fecha_calculo, Double inversion_inicial, Double contribucion_mensual, Integer cantidad_anios, Double tasa_interes_estimada, Double varianza_tasa_interes, Usuario usuario, Capitalizacion capitalizacion) {
         this.id_calculo = id_calculo;
         this.nombre_calculo = nombre_calculo;
         this.fecha_calculo = fecha_calculo;
