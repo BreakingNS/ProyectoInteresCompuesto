@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -50,3 +50,4 @@ public class NegocioGasto implements Serializable{
     }
     
 }
+*/

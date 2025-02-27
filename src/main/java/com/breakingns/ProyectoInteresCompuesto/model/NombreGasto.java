@@ -1,5 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,8 +30,9 @@ public class NombreGasto {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference
     private Usuario usuario;
-
+    
     public NombreGasto() {
     }
 
@@ -40,3 +43,4 @@ public class NombreGasto {
         this.usuario = usuario;
     }
 }
+*/

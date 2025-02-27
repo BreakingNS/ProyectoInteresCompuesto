@@ -1,11 +1,13 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
@@ -20,23 +22,23 @@ public class TipoInversion {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id_tipo_inversion;
-    private String nombre_tipo_inversion;
     
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
-    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nombre_capitalizacion")
+    private TipoTipoInversion tipoTipoInversion; 
+    /*
     @OneToMany(mappedBy = "tipoInversion")
+    @JsonBackReference
     private List<Entidad> listaEntidades;
-
+    */
     public TipoInversion() {
     }
 
-    public TipoInversion(Long id_tipo_inversion, String nombre_tipo_inversion, Usuario usuario, List<Entidad> listaEntidades) {
+    public TipoInversion(Long id_tipo_inversion, TipoTipoInversion tipoTipoInversion/*, List<Entidad> listaEntidades*/) {
         this.id_tipo_inversion = id_tipo_inversion;
-        this.nombre_tipo_inversion = nombre_tipo_inversion;
-        this.usuario = usuario;
-        this.listaEntidades = listaEntidades;
+        this.tipoTipoInversion = tipoTipoInversion;
+        //this.listaEntidades = listaEntidades;
     }
     
 }
+

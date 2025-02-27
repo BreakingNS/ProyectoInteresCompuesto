@@ -1,5 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class Calculadora {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference
     private Usuario usuario;
     
     @ManyToOne
@@ -53,3 +55,4 @@ public class Calculadora {
     }
 
 }
+*/

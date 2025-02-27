@@ -1,5 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +27,7 @@ public class Gasto {
     private Double monto_gasto;
     private LocalDateTime fecha_gasto;
     private String detalle;
-    
+    /*
     @OneToMany(mappedBy = "gasto")
     private List<NegocioGasto> listaNegocioGastos;
     
@@ -35,8 +37,9 @@ public class Gasto {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference//("usuario-gasto")
     private Usuario usuario;
-
+    
     public Gasto() {
     }
 
@@ -45,8 +48,9 @@ public class Gasto {
         this.monto_gasto = monto_gasto;
         this.fecha_gasto = fecha_gasto;
         this.detalle = detalle;
-        this.listaNegocioGastos = listaNegocioGastos;
-        this.nombre_gasto = nombre_gasto;
+        //this.listaNegocioGastos = listaNegocioGastos;
+        //this.nombre_gasto = nombre_gasto;
         this.usuario = usuario;
     }
 }
+*/

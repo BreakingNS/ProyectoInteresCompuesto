@@ -1,5 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -25,41 +26,55 @@ public class Usuario {
     private String contrasenia;
     private String correo;
     
+    /*
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Inversion> listaInversiones;
     
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Calculadora> listaCalculos;
-    
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Negocio> listaNegocios;
-    
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TipoInversion> listaTipoInversiones;
-    
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Entidad> listaEntidades;
     
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Calculadora> listaCalculos;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Negocio> listaNegocios;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference//("usuario-gasto")
     private List<Gasto> listaGastos;
     
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<NombreGasto> listaNombreGastos;
-    
+    */
     public Usuario() {
     }
-
-    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String correo, List<Inversion> listaInversiones, List<Calculadora> listaCalculos, List<Negocio> listaNegocios, List<TipoInversion> listaTipoInversiones, List<Entidad> listaEntidades, List<Gasto> listaGastos, List<NombreGasto> listaNombreGastos) {
+    
+    
+    /*
+    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String correo, List<Inversion> listaInversiones, List<Entidad> listaEntidades, List<Calculadora> listaCalculos, List<Negocio> listaNegocios, List<Gasto> listaGastos, List<NombreGasto> listaNombreGastos) {
         this.id_usuario = id_usuario;
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
         this.correo = correo;
         this.listaInversiones = listaInversiones;
+        this.listaEntidades = listaEntidades;
         this.listaCalculos = listaCalculos;
         this.listaNegocios = listaNegocios;
-        this.listaTipoInversiones = listaTipoInversiones;
-        this.listaEntidades = listaEntidades;
         this.listaGastos = listaGastos;
         this.listaNombreGastos = listaNombreGastos;
     }
+    */
+
+    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String correo) {
+        this.id_usuario = id_usuario;
+        this.nombre_usuario = nombre_usuario;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+    }
+    
 }

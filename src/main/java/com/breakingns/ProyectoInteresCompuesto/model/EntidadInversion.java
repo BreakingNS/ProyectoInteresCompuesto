@@ -1,6 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class EntidadInversion implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "id_inversion", insertable = false, updatable = false)
+    @JsonManagedReference
     private Inversion inversion;
     
     public EntidadInversion() {
@@ -52,3 +54,4 @@ public class EntidadInversion implements Serializable{
     }
    
 }
+*/

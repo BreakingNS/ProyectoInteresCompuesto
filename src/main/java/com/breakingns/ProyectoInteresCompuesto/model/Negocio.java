@@ -1,5 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -29,12 +30,13 @@ public class Negocio {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference
     private Usuario usuario;
     
     @OneToMany(mappedBy = "negocio")
     @JsonManagedReference
     private List<NegocioGasto> listaNegociosGastos;
-
+    
     public Negocio() {
     }
 
@@ -46,7 +48,7 @@ public class Negocio {
         this.listaNegociosGastos = listaNegociosGastos;
     }
 }
-
+*/
 
 
 

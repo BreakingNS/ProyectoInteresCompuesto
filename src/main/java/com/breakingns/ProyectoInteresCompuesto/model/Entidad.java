@@ -1,5 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +30,12 @@ public class Entidad {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference
     private Usuario usuario;
     
     @ManyToOne
     @JoinColumn(name = "id_tipo_inversion")
+    @JsonManagedReference
     private TipoInversion tipoInversion;
     
     public Entidad() {
@@ -46,3 +49,4 @@ public class Entidad {
         this.tipoInversion = tipoInversion;
     }
 }
+*/

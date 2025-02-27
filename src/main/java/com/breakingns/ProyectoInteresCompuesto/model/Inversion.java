@@ -1,5 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-
+/*
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,21 +33,37 @@ public class Inversion {
     
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonBackReference
     private Usuario usuario;
+    
     @OneToMany(mappedBy = "inversion")
+    @JsonManagedReference
     private List<EntidadInversion> listaEntidadInversion;
-
+    
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_inversion")
+    private TipoInversion tipoInversion;
+    
     public Inversion() {
     }
-
-    public Inversion(Long id_inversion, String nombre_inversion, LocalDateTime fecha_inicio, Integer cantidad_entidades, Double total_capital, Usuario usuario, List<EntidadInversion> listaEntidadInversion) {
+    
+    public Inversion(Long id_inversion,
+            Usuario usuario,
+            String nombre_inversion,
+            TipoInversion tipoInversion) {
+        
         this.id_inversion = id_inversion;
-        this.nombre_inversion = nombre_inversion;
-        this.fecha_inicio = fecha_inicio;
-        this.cantidad_entidades = cantidad_entidades;
-        this.total_capital = total_capital;
         this.usuario = usuario;
-        this.listaEntidadInversion = listaEntidadInversion;
+        this.nombre_inversion = nombre_inversion;
+        
+        this.fecha_inicio = LocalDateTime.now();
+        this.cantidad_entidades = 0;
+        this.total_capital = 0.0;
+        
+        this.listaEntidadInversion = new ArrayList<>();
+        this.tipoInversion = tipoInversion;
+        
     }
     
 }
+*/
