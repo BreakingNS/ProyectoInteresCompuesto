@@ -26,18 +26,18 @@ public class TipoInversion {
     @Enumerated(EnumType.STRING)
     @Column(name = "nombre_capitalizacion")
     private TipoTipoInversion tipoTipoInversion; 
-    /*
+    
     @OneToMany(mappedBy = "tipoInversion")
-    @JsonBackReference
+    @JsonBackReference("tipoInversion-entidad")
     private List<Entidad> listaEntidades;
-    */
+    
     public TipoInversion() {
     }
 
     public TipoInversion(Long id_tipo_inversion, TipoTipoInversion tipoTipoInversion/*, List<Entidad> listaEntidades*/) {
         this.id_tipo_inversion = id_tipo_inversion;
         this.tipoTipoInversion = tipoTipoInversion;
-        //this.listaEntidades = listaEntidades;
+        this.listaEntidades = listaEntidades;
     }
     
 }

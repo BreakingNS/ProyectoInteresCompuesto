@@ -1,6 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.service;
-/*
+
 import com.breakingns.ProyectoInteresCompuesto.model.Entidad;
+import com.breakingns.ProyectoInteresCompuesto.model.TipoInversion;
 import java.util.List;
 
 public interface IEntidadService {
@@ -9,6 +10,6 @@ public interface IEntidadService {
     public void saveEntidad(Entidad enti);
     public void deleteEntidad(Long id);
     public Entidad findEntidad(Long id);
+    public Entidad editEntidad(Long idOriginal, String nombre_entidadNuevo, String tipoInversionNuevo);
     
 }
-*/

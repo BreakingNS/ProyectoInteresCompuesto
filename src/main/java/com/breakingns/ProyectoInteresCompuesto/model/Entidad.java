@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
@@ -24,23 +24,25 @@ public class Entidad {
     private Long id_entidad;
     private String nombre_entidad;
     
-    @OneToMany(mappedBy = "entidad")
-    @JsonManagedReference
-    private List<EntidadInversion> listaEntidadInversion;
-    
     @ManyToOne
     @JoinColumn(name = "id_usuario")
-    @JsonBackReference
+    @JsonBackReference("usuario-entidad")
     private Usuario usuario;
     
     @ManyToOne
-    @JoinColumn(name = "id_tipo_inversion")
-    @JsonManagedReference
+    @JoinColumn(name = "id_tipo_inversion", nullable = false)
+    @JsonBackReference("tipoInversion-entidad")
     private TipoInversion tipoInversion;
+    
+    /*
+    @OneToMany(mappedBy = "entidad")
+    @JsonManagedReference
+    private List<EntidadInversion> listaEntidadInversion;
+    */
     
     public Entidad() {
     }
-
+    /*
     public Entidad(Long id_entidad, String nombre_entidad, List<EntidadInversion> listaEntidadInversion, Usuario usuario, TipoInversion tipoInversion) {
         this.id_entidad = id_entidad;
         this.nombre_entidad = nombre_entidad;
@@ -48,5 +50,15 @@ public class Entidad {
         this.usuario = usuario;
         this.tipoInversion = tipoInversion;
     }
+    */
+
+    public Entidad(Long id_entidad, String nombre_entidad, Usuario usuario, TipoInversion tipoInversion) {
+        this.id_entidad = id_entidad;
+        this.nombre_entidad = nombre_entidad;
+        this.usuario = usuario;
+        this.tipoInversion = tipoInversion;
+    }
+
+    
+    
 }
-*/
