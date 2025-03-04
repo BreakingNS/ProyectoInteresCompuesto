@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.service;
-/*
+
 import com.breakingns.ProyectoInteresCompuesto.model.Inversion;
 import com.breakingns.ProyectoInteresCompuesto.model.TipoInversion;
 import com.breakingns.ProyectoInteresCompuesto.repository.IInversionRepository;
@@ -54,4 +54,3 @@ public class InversionService implements IInversionService{
     }
     
 }
-*/

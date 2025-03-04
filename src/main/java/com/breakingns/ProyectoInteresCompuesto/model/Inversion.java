@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Basic;
@@ -35,22 +35,21 @@ public class Inversion {
     @JoinColumn(name = "id_usuario")
     @JsonBackReference
     private Usuario usuario;
-    
+    /*
     @OneToMany(mappedBy = "inversion")
     @JsonManagedReference
     private List<EntidadInversion> listaEntidadInversion;
-    
-    @ManyToOne
-    @JoinColumn(name = "id_tipo_inversion")
-    private TipoInversion tipoInversion;
+    */
     
     public Inversion() {
+        this.fecha_inicio = LocalDateTime.now();
+        this.cantidad_entidades = 0;
+        this.total_capital = 0.0;
     }
     
     public Inversion(Long id_inversion,
             Usuario usuario,
-            String nombre_inversion,
-            TipoInversion tipoInversion) {
+            String nombre_inversion) {
         
         this.id_inversion = id_inversion;
         this.usuario = usuario;
@@ -59,11 +58,8 @@ public class Inversion {
         this.fecha_inicio = LocalDateTime.now();
         this.cantidad_entidades = 0;
         this.total_capital = 0.0;
-        
-        this.listaEntidadInversion = new ArrayList<>();
-        this.tipoInversion = tipoInversion;
-        
+        /*
+        this.listaEntidadInversion = new ArrayList<>();*/
     }
     
 }
-*/

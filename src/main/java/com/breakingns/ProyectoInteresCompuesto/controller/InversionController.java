@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.controller;
-/*
+
 import com.breakingns.ProyectoInteresCompuesto.model.Inversion;
 import com.breakingns.ProyectoInteresCompuesto.service.IInversionService;
 import java.time.LocalDateTime;
@@ -55,4 +55,3 @@ public class InversionController {
     }
     
 }
-*/

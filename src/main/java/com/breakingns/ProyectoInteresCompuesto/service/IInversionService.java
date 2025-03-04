@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.service;
-/*
+
 import com.breakingns.ProyectoInteresCompuesto.model.Inversion;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,4 +17,3 @@ public interface IInversionService {
                                     Double total_capitalNuevo);
     
 }
-*/
