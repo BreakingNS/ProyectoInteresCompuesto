@@ -1,7 +1,10 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +23,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "Inversiones")
 @Getter @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "listaEntidadInversion"})
 public class Inversion {
     
     @Id
@@ -35,11 +39,10 @@ public class Inversion {
     @JoinColumn(name = "id_usuario")
     @JsonBackReference
     private Usuario usuario;
-    /*
+    
     @OneToMany(mappedBy = "inversion")
-    @JsonManagedReference
+    //@JsonManagedReference
     private List<EntidadInversion> listaEntidadInversion;
-    */
     
     public Inversion() {
         this.fecha_inicio = LocalDateTime.now();
@@ -58,8 +61,8 @@ public class Inversion {
         this.fecha_inicio = LocalDateTime.now();
         this.cantidad_entidades = 0;
         this.total_capital = 0.0;
-        /*
-        this.listaEntidadInversion = new ArrayList<>();*/
+        
+        this.listaEntidadInversion = new ArrayList<>();
     }
     
 }

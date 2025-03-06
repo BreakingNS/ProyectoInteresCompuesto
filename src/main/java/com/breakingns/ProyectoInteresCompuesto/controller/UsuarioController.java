@@ -25,6 +25,15 @@ public class UsuarioController {
     public String nuevoUsuario(@RequestBody Usuario usuario){
         usuService.saveUsuario(usuario);
         return "El Usuario fue creado correctamente";
+        /*
+        try {
+            usuService.saveUsuario(usuario);
+            return ResponseEntity.ok("EntidadInversion creada correctamente");
+        } catch (Exception e) {
+            e.printStackTrace(); // Muestra el error en la consola
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear la EntidadInversion: " + e.getMessage());
+        }
+        */
     }
     
     @GetMapping

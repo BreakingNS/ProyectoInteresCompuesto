@@ -1,7 +1,10 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +20,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "Entidades")
 @Getter @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "listaEntidadInversion"})
 public class Entidad {
     
     @Id
@@ -34,15 +38,13 @@ public class Entidad {
     @JsonBackReference("tipoInversion-entidad")
     private TipoInversion tipoInversion;
     
-    /*
     @OneToMany(mappedBy = "entidad")
-    @JsonManagedReference
+    //@JsonManagedReference
     private List<EntidadInversion> listaEntidadInversion;
-    */
     
     public Entidad() {
     }
-    /*
+
     public Entidad(Long id_entidad, String nombre_entidad, List<EntidadInversion> listaEntidadInversion, Usuario usuario, TipoInversion tipoInversion) {
         this.id_entidad = id_entidad;
         this.nombre_entidad = nombre_entidad;
@@ -50,15 +52,5 @@ public class Entidad {
         this.usuario = usuario;
         this.tipoInversion = tipoInversion;
     }
-    */
-
-    public Entidad(Long id_entidad, String nombre_entidad, Usuario usuario, TipoInversion tipoInversion) {
-        this.id_entidad = id_entidad;
-        this.nombre_entidad = nombre_entidad;
-        this.usuario = usuario;
-        this.tipoInversion = tipoInversion;
-    }
-
-    
-    
+       
 }

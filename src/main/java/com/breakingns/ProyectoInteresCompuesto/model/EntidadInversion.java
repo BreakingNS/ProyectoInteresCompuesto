@@ -1,7 +1,11 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,39 +23,40 @@ import lombok.Setter;
 @Entity
 @Table(name = "EntidadesInversiones")
 @Getter @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class EntidadInversion implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_entidad_inversion;
-    
-    @Embedded
-    private EntidadInversionId entidadInversionId;
-    
-    private Double monto_invertido;
-    private LocalDateTime fecha_inversion;
+    private Long id;
     
     @ManyToOne
-    @JoinColumn(name = "id_entidad", insertable = false, updatable = false)
-    @JsonBackReference
+    @JoinColumn(name = "id_entidad"/*, insertable = false, updatable = false*/, nullable = false)
+    //@JsonIgnore
     private Entidad entidad;
 
     @ManyToOne
-    @JoinColumn(name = "id_inversion", insertable = false, updatable = false)
-    @JsonManagedReference
+    @JoinColumn(name = "id_inversion"/*, insertable = false, updatable = false*/, nullable = false)
+    //@JsonIgnore
     private Inversion inversion;
     
+    private LocalDateTime fecha_inversion;
+    
+    private Double monto_invertido;
+
+    
     public EntidadInversion() {
+        
+        this.fecha_inversion = LocalDateTime.now(); 
+        
     }
 
-    public EntidadInversion(Long id_entidad_inversion, EntidadInversionId entidadInversionId, Double monto_invertido, LocalDateTime fecha_inversion, Entidad entidad, Inversion inversion) {
-        this.id_entidad_inversion = id_entidad_inversion;
-        this.entidadInversionId = entidadInversionId;
-        this.monto_invertido = monto_invertido;
-        this.fecha_inversion = fecha_inversion;
+    public EntidadInversion(Long id, Entidad entidad, Inversion inversion, LocalDateTime fecha_inversion, Double monto_invertido) {
+        this.id = id;
         this.entidad = entidad;
         this.inversion = inversion;
+        this.fecha_inversion = fecha_inversion;
+        this.monto_invertido = monto_invertido;
     }
    
 }
-*/
