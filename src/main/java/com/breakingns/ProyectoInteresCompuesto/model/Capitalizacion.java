@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Capitalizaciones")
+@Table(name = "capitalizaciones")
 @Getter @Setter
 public class Capitalizacion {
     
@@ -28,7 +28,7 @@ public class Capitalizacion {
     
     @OneToMany(mappedBy = "capitalizacion")
     private List<Calculadora> listaCalculos;
-
+    
     public Capitalizacion() {
     }
 
@@ -37,5 +37,6 @@ public class Capitalizacion {
         this.tipoCapitalizacion = tipoCapitalizacion;
         this.listaCalculos = listaCalculos;
     }
+
 }
-*/
+

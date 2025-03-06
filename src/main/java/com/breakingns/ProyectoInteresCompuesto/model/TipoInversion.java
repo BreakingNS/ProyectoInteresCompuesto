@@ -24,7 +24,7 @@ public class TipoInversion {
     private Long id_tipo_inversion;
     
     @Enumerated(EnumType.STRING)
-    @Column(name = "nombre_capitalizacion")
+    @Column(name = "nombre_tipo_inversion")
     private TipoTipoInversion tipoTipoInversion; 
     
     @OneToMany(mappedBy = "tipoInversion")
@@ -34,7 +34,7 @@ public class TipoInversion {
     public TipoInversion() {
     }
 
-    public TipoInversion(Long id_tipo_inversion, TipoTipoInversion tipoTipoInversion/*, List<Entidad> listaEntidades*/) {
+    public TipoInversion(Long id_tipo_inversion, TipoTipoInversion tipoTipoInversion, List<Entidad> listaEntidades) {
         this.id_tipo_inversion = id_tipo_inversion;
         this.tipoTipoInversion = tipoTipoInversion;
         this.listaEntidades = listaEntidades;
