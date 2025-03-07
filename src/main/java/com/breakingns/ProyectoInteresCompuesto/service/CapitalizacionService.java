@@ -14,30 +14,22 @@ public class CapitalizacionService implements ICapitalizacionService{
     
     @Override
     public List<Capitalizacion> getCapitalizacion() {
-        
         return repo.findAll();
-        
     }
 
     @Override
     public void saveCapitalizacion(Capitalizacion capi) {
-
         repo.save(capi);
-        
     }
 
     @Override
     public void deleteCapitalizacion(Long id) {
-
         repo.deleteById(id);
-
     }
 
     @Override
     public Capitalizacion findCapitalizacion(Long id) {
-        
         return repo.findById(id).orElse(null);
-        
     }
     
 }

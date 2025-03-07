@@ -1,7 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.service;
 
 import com.breakingns.ProyectoInteresCompuesto.model.Entidad;
-import com.breakingns.ProyectoInteresCompuesto.model.TipoInversion;
 import java.util.List;
 
 public interface IEntidadService {

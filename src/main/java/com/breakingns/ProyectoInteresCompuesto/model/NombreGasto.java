@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
@@ -24,10 +24,10 @@ public class NombreGasto {
     private Long id_nombre_gasto;
     
     private String nombreGasto;
-    
+    /*
     @OneToMany(mappedBy = "nombre_gasto")
     private List<Gasto> listaGastos;
-    
+    */
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     @JsonBackReference
@@ -35,12 +35,19 @@ public class NombreGasto {
     
     public NombreGasto() {
     }
-
+    /*
     public NombreGasto(Long id_nombre_gasto, String nombreGasto, List<Gasto> listaGastos, Usuario usuario) {
         this.id_nombre_gasto = id_nombre_gasto;
         this.nombreGasto = nombreGasto;
         this.listaGastos = listaGastos;
         this.usuario = usuario;
+    }*/
+
+    public NombreGasto(Long id_nombre_gasto, String nombreGasto, Usuario usuario) {
+        this.id_nombre_gasto = id_nombre_gasto;
+        this.nombreGasto = nombreGasto;
+        this.usuario = usuario;
     }
+    
+    
 }
-*/

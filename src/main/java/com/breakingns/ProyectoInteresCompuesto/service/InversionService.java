@@ -1,7 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.service;
 
 import com.breakingns.ProyectoInteresCompuesto.model.Inversion;
-import com.breakingns.ProyectoInteresCompuesto.model.TipoInversion;
 import com.breakingns.ProyectoInteresCompuesto.repository.IInversionRepository;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,9 +20,6 @@ public class InversionService implements IInversionService{
 
     @Override
     public void saveInversion(Inversion inver) {
-        //System.out.println("tipo inversion: " + inver.getTipoInversion().getId_tipo_inversion());
-
-        
         inverRepository.save(inver);
     }
 

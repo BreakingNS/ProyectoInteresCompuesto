@@ -1,10 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,7 +38,6 @@ public class Inversion {
     private Usuario usuario;
     
     @OneToMany(mappedBy = "inversion")
-    //@JsonManagedReference
     private List<EntidadInversion> listaEntidadInversion;
     
     public Inversion() {

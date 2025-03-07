@@ -25,15 +25,6 @@ public class UsuarioController {
     public String nuevoUsuario(@RequestBody Usuario usuario){
         usuService.saveUsuario(usuario);
         return "El Usuario fue creado correctamente";
-        /*
-        try {
-            usuService.saveUsuario(usuario);
-            return ResponseEntity.ok("EntidadInversion creada correctamente");
-        } catch (Exception e) {
-            e.printStackTrace(); // Muestra el error en la consola
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear la EntidadInversion: " + e.getMessage());
-        }
-        */
     }
     
     @GetMapping
@@ -49,12 +40,11 @@ public class UsuarioController {
     
     @PutMapping("/editar/{id_original}")
     public Usuario editUsuario(@PathVariable Long id_original,
-                                //@RequestParam(required = false, name = "id_usuario") Long nuevaId,
                                 @RequestParam(required = false, name = "nombre_usuario") String nuevoNombre,
                                 @RequestParam(required = false, name = "contrasenia") String nuevaContrasenia,
                                 @RequestParam(required = false, name = "correo") String nuevoCorreo){
         
-        return usuService.editUsuario(id_original, /*nuevaId,*/ nuevoNombre, nuevaContrasenia, nuevoCorreo);
+        return usuService.editUsuario(id_original, nuevoNombre, nuevaContrasenia, nuevoCorreo);
         
     }
     
