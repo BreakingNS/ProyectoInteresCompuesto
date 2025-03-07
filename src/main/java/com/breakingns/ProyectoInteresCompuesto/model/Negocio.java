@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
@@ -32,23 +32,27 @@ public class Negocio {
     @JoinColumn(name = "id_usuario")
     @JsonBackReference
     private Usuario usuario;
-    
+    /*
     @OneToMany(mappedBy = "negocio")
     @JsonManagedReference
     private List<NegocioGasto> listaNegociosGastos;
+    */
     
     public Negocio() {
+        
+        this.fecha_inicio = LocalDateTime.now();
+        
     }
 
-    public Negocio(Long id_negocio, String nombre_negocio, LocalDateTime fecha_inicio, Usuario usuario, List<NegocioGasto> listaNegociosGastos) {
+    public Negocio(Long id_negocio, String nombre_negocio, LocalDateTime fecha_inicio, Usuario usuario) {
         this.id_negocio = id_negocio;
         this.nombre_negocio = nombre_negocio;
         this.fecha_inicio = fecha_inicio;
         this.usuario = usuario;
-        this.listaNegociosGastos = listaNegociosGastos;
     }
+    
 }
-*/
+
 
 
 

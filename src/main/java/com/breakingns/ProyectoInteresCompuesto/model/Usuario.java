@@ -38,11 +38,11 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Calculadora> listaCalculos;
-    /*
+    
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Negocio> listaNegocios;
-    
+    /*
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference//("usuario-gasto")
     private List<Gasto> listaGastos;
@@ -70,7 +70,7 @@ public class Usuario {
     }
     */
 
-    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String correo, List<Inversion> listaInversiones, List<Entidad> listaEntidades, List<Calculadora> listaCalculos) {
+    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String correo, List<Inversion> listaInversiones, List<Entidad> listaEntidades, List<Calculadora> listaCalculos, List<Negocio> listaNegocios) {
         this.id_usuario = id_usuario;
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
@@ -78,6 +78,7 @@ public class Usuario {
         this.listaInversiones = listaInversiones;
         this.listaEntidades = listaEntidades;
         this.listaCalculos = listaCalculos;
+        this.listaNegocios = listaNegocios;
     }
     
 }
