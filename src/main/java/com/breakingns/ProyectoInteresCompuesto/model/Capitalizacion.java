@@ -1,5 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -27,7 +29,23 @@ public class Capitalizacion {
     private TipoCapitalizacion tipoCapitalizacion; 
     
     @OneToMany(mappedBy = "capitalizacion")
+    @JsonIgnore
     private List<Calculadora> listaCalculos;
+    
+    /* COPIA
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id_capitalizacion;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nombre_capitalizacion")
+    private TipoCapitalizacion tipoCapitalizacion; 
+    
+    @OneToMany(mappedBy = "capitalizacion")
+    private List<Calculadora> listaCalculos;
+    
+    */
     
     public Capitalizacion() {
     }

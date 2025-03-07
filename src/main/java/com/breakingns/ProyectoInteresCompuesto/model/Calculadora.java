@@ -37,8 +37,25 @@ public class Calculadora {
     @ManyToOne
     @JoinColumn(name = "id_capitalizacion")
     private Capitalizacion capitalizacion;
+    
+    /* COPIA
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    @JsonBackReference
+    private Usuario usuario;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_capitalizacion")
+    private Capitalizacion capitalizacion;
+    
+    */
+    
 
     public Calculadora() {
+        
+        this.fecha_calculo = LocalDateTime.now();
+        
     }
 
     public Calculadora(Long id_calculo, String nombre_calculo, LocalDateTime fecha_calculo, Double inversion_inicial, Double contribucion_mensual, Integer cantidad_anios, Double tasa_interes_estimada, Double varianza_tasa_interes, Usuario usuario, Capitalizacion capitalizacion) {
