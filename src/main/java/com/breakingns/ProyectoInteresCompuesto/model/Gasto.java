@@ -1,5 +1,5 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
@@ -30,7 +30,7 @@ public class Gasto {
     /*
     @OneToMany(mappedBy = "gasto")
     private List<NegocioGasto> listaNegocioGastos;
-    
+    */
     @ManyToOne
     @JoinColumn(name = "id_nombre_gasto")
     private NombreGasto nombre_gasto;
@@ -41,16 +41,29 @@ public class Gasto {
     private Usuario usuario;
     
     public Gasto() {
+        
+        this.fecha_gasto = LocalDateTime.now();
+        
     }
 
+    public Gasto(Long id_gasto, Double monto_gasto, LocalDateTime fecha_gasto, String detalle, NombreGasto nombre_gasto, Usuario usuario) {
+        this.id_gasto = id_gasto;
+        this.monto_gasto = monto_gasto;
+        this.fecha_gasto = fecha_gasto;
+        this.detalle = detalle;
+        this.nombre_gasto = nombre_gasto;
+        this.usuario = usuario;
+    }
+    /*
     public Gasto(Long id_gasto, Double monto_gasto, LocalDateTime fecha_gasto, String detalle, List<NegocioGasto> listaNegocioGastos, NombreGasto nombre_gasto, Usuario usuario) {
         this.id_gasto = id_gasto;
         this.monto_gasto = monto_gasto;
         this.fecha_gasto = fecha_gasto;
         this.detalle = detalle;
-        //this.listaNegocioGastos = listaNegocioGastos;
-        //this.nombre_gasto = nombre_gasto;
+        this.listaNegocioGastos = listaNegocioGastos;
+        this.nombre_gasto = nombre_gasto;
         this.usuario = usuario;
     }
+    */
 }
-*/
+
