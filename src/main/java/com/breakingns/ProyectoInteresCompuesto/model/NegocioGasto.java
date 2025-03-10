@@ -1,6 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
-/*
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,39 +16,36 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-@Entity
 @Table(name = "NegociosGastos")
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class NegocioGasto implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_negocio_gasto;
-    
-    @Embedded
-    private NegocioGastoId id;
+    private Long id;
     
     private LocalDateTime fecha_mes_anio;
     
     @ManyToOne
-    @JoinColumn(name = "id_negocio", insertable = false, updatable = false)
-    @JsonBackReference
+    @JoinColumn(name = "id_negocio", /*insertable = false, updatable = false, */nullable = false)
     private Negocio negocio;
     
     @ManyToOne
-    @JoinColumn(name = "id_gasto", insertable = false, updatable = false)
-    @JsonBackReference
+    @JoinColumn(name = "id_gasto", /*insertable = false, updatable = false */nullable = false)
     private Gasto gasto;
 
     public NegocioGasto() {
+        this.fecha_mes_anio = LocalDateTime.now();
     }
 
-    public NegocioGasto(Long id_negocio_gasto, NegocioGastoId id, LocalDateTime fecha_mes_anio, Negocio negocio, Gasto gasto) {
-        this.id_negocio_gasto = id_negocio_gasto;
+    public NegocioGasto(Long id, LocalDateTime fecha_mes_anio, Negocio negocio, Gasto gasto) {
         this.id = id;
         this.fecha_mes_anio = fecha_mes_anio;
         this.negocio = negocio;
         this.gasto = gasto;
     }
+
+    
     
 }
-*/

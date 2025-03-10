@@ -1,6 +1,7 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 @Table(name = "Gastos")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "listaNegociosGastos"})
 public class Gasto {
     
     @Id
@@ -27,10 +29,10 @@ public class Gasto {
     private Double monto_gasto;
     private LocalDateTime fecha_gasto;
     private String detalle;
-    /*
+    
     @OneToMany(mappedBy = "gasto")
     private List<NegocioGasto> listaNegocioGastos;
-    */
+    
     @ManyToOne
     @JoinColumn(name = "id_nombre_gasto")
     private NombreGasto nombre_gasto;
