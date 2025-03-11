@@ -1,7 +1,9 @@
 package com.breakingns.ProyectoInteresCompuesto.model;
 
 public enum TipoCapitalizacion {
-    DIARIO,
+    ANUAL,
+    SEMESTRAL,
+    TRIMESTRAL,
     MENSUAL,
-    ANUAL
+    DIARIO
 }

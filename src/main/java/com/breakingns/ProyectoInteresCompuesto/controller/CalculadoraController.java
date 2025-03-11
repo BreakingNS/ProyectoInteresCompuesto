@@ -1,6 +1,7 @@
 
 package com.breakingns.ProyectoInteresCompuesto.controller;
 
+import com.breakingns.ProyectoInteresCompuesto.DTO.CalculadoraDTO;
 import com.breakingns.ProyectoInteresCompuesto.model.Calculadora;
 import com.breakingns.ProyectoInteresCompuesto.service.ICalculadoraService;
 import java.util.List;
@@ -28,7 +29,7 @@ public class CalculadoraController {
     }
     
     @GetMapping
-    public List<Calculadora> traerCalculos(){
+    public List<CalculadoraDTO> traerCalculos(){
         
         return calcService.getCalculadora();
         
@@ -42,7 +43,7 @@ public class CalculadoraController {
     }
     
     @GetMapping("/{id_buscar}")
-    public Calculadora buscarCalculo(@PathVariable Long id_buscar){
+    public CalculadoraDTO buscarCalculo(@PathVariable Long id_buscar){
         
         return calcService.findCalculadora(id_buscar);
         

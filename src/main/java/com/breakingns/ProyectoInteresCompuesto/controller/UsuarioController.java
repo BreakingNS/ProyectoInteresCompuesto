@@ -1,5 +1,6 @@
 package com.breakingns.ProyectoInteresCompuesto.controller;
 
+import com.breakingns.ProyectoInteresCompuesto.DTO.UsuarioDTO;
 import com.breakingns.ProyectoInteresCompuesto.model.Usuario;
 import com.breakingns.ProyectoInteresCompuesto.service.IUsuarioService;
 import java.util.List;
@@ -28,18 +29,23 @@ public class UsuarioController {
     }
     
     @GetMapping
-    public List<Usuario> listarUsuarios(){
+    public List<UsuarioDTO> listarUsuarios(){
         return usuService.getUsuario();
     }
     
+    @GetMapping("/{id}")
+    public UsuarioDTO buscarUsuario(@PathVariable Long id){
+        return usuService.findUsuario(id);
+    }
+    
     @DeleteMapping("/borrar/{id}")
-    public String deleteUsuario(@PathVariable Long id){
+    public String borrarUsuario(@PathVariable Long id){
         usuService.deleteUsuario(id);
         return "El usuario fue eliminado correctamente";
     }
     
     @PutMapping("/editar/{id_original}")
-    public Usuario editUsuario(@PathVariable Long id_original,
+    public Usuario editarUsuario(@PathVariable Long id_original,
                                 @RequestParam(required = false, name = "nombre_usuario") String nuevoNombre,
                                 @RequestParam(required = false, name = "contrasenia") String nuevaContrasenia,
                                 @RequestParam(required = false, name = "correo") String nuevoCorreo){
